@@ -17,4 +17,4 @@ run: flutter pub get
 - uses: bluefireteam/flutter-gh-pages@v7
 with:
 workingDir: web-app
-baseHref: /web-app/
+baseHref: /

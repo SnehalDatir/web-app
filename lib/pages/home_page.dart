@@ -6,6 +6,7 @@ import 'package:galleryimage/galleryimage.dart';
 import 'package:flutter_academy/res/assets.dart';
 import 'package:flutter_academy/widgets/call_to_action.dart';
 import 'package:flutter_academy/widgets/course_card.dart';
+import 'package:flutter_academy/widgets/course_card_image_list.dart';
 import 'package:flutter_academy/widgets/featured_section.dart';
 import 'package:flutter_academy/widgets/footer.dart';
 import 'package:flutter_academy/widgets/header.dart';
@@ -53,21 +54,8 @@ class _MyHomePageState extends State<HomePage> {
     setState(() {});
   }
 
-  Widget _buildGrid() => GridView.extent(
-      maxCrossAxisExtent: 150,
-      padding: const EdgeInsets.all(4),
-      mainAxisSpacing: 4,
-      crossAxisSpacing: 4,
-      children: _buildGridTileList(30));
-
-  // The images are saved with names pic0.jpg, pic1.jpg...pic29.jpg.
-  // The List.generate() constructor allows an easy way to create
-  // a list when objects have a predictable naming pattern.
-  List<Container> _buildGridTileList(int count) =>
-      List.generate(count, (i) => Container(child: Image.asset(_images[i])));
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(context) {
     return Scaffold(
       body: ListView(
         children: <Widget>[
@@ -84,28 +72,12 @@ class _MyHomePageState extends State<HomePage> {
           ),
           const SizedBox(height: 10.0),
           Container(
-            height: 1000,
-            child: GridView.count(
-              crossAxisCount: 3,
-              crossAxisSpacing: 4.0,
-              mainAxisSpacing: 8.0,
-              children: List.generate(
-                _images.length,
-                (index) {
-                  return Row(children: <Widget>[
-                    const SizedBox(width: 20.0),
-                    CourseCard(
-                      title: 'भगवान गणेश जी',
-                      image: _images[index],
-                      description: "",
-                      onActionPressed: () {},
-                    ),
-                    const SizedBox(width: 20.0),
-                  ]);
-                },
-              ),
-            ),
-          ),
+              height: MediaQuery.of(context).size.height,
+              child: CourseCardImgList(
+                title: 'गणपति',
+                images: _images,
+                onActionPressed: () {},
+              )),
 
           //footer
           // Footer(),

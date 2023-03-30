@@ -8,7 +8,7 @@ class CallToAction extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 40.0),
       color: Colors.grey.shade200,
-      height: 400,
+      height: MediaQuery.of(context).size.height,
       alignment: Alignment.center,
       child: Column(
         mainAxisSize: MainAxisSize.min,

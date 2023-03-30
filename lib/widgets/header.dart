@@ -7,7 +7,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500.0,
+      height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
         color: Colors.grey.shade100,
         image: DecorationImage(

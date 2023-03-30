@@ -6,34 +6,35 @@ class CourseCard extends StatelessWidget {
     required this.image,
     required this.title,
     required this.onActionPressed,
-    required this.description,
+    // required this.description,
   }) : super(key: key);
   final String image;
   final String title;
   final Function() onActionPressed;
-  final String description;
+  // final String description;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 500.0,
+      width: MediaQuery.of(context).size.width / 7,
       child: Card(
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: onActionPressed,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Image.asset(
                 image,
-                height: 450,
-                fit: BoxFit.cover,
+                fit: BoxFit
+                    .cover, // Set the fit property to cover the available space
+                width: double
+                    .infinity, // Set the width to fill the available space
               ),
+
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Text(
                   title,
-                  style: Theme.of(context).textTheme.headline4,
                 ),
               ),
               // Padding(

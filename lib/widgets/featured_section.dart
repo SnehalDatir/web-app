@@ -21,7 +21,7 @@ class FeaturedSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1340,
+      width: MediaQuery.of(context).size.width,
       padding: const EdgeInsets.all(32.0),
       child: Row(
         children: [
@@ -29,7 +29,7 @@ class FeaturedSection extends StatelessWidget {
             Expanded(
               child: Image.asset(
                 image,
-                height: 450,
+                height: MediaQuery.of(context).size.height,
               ),
             ),
           const SizedBox(width: 20.0),
@@ -63,7 +63,7 @@ class FeaturedSection extends StatelessWidget {
             Expanded(
               child: Image.asset(
                 image,
-                height: 450,
+                height: MediaQuery.of(context).size.height,
               ),
             ),
         ],

@@ -6,7 +6,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: MediaQuery.of(context).size.height,
       color: Colors.grey.shade900,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
